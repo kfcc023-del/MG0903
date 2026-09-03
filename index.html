@@ -8,6 +8,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome CDN for Canvas-free HTML Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 구글 폰트(Jua) 추가 -->
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
     <!-- Chart.js CDN -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
@@ -84,10 +86,10 @@ Confirmation: Neither Mermaid JS nor SVG were used in this file.
                 </div>
             </div>
             <nav class="flex items-center space-x-2 text-xs sm:text-sm font-medium">
-                <a href="#overview" class="px-3 py-1.5 rounded-md hover:bg-slate-800 transition text-slate-300 hover:text-white">개요</a>
-                <a href="#specs" class="px-3 py-1.5 rounded-md hover:bg-slate-800 transition text-slate-300 hover:text-white">상품스펙</a>
-                <a href="#risk" class="px-3 py-1.5 rounded-md hover:bg-slate-800 transition text-slate-300 hover:text-white">리스크관리</a>
-                <a href="#impact" class="px-3 py-1.5 rounded-md hover:bg-slate-800 transition text-slate-300 hover:text-white">기대효과</a>
+                <a href="#overview" class="px-3 py-1.5 rounded-md hover:bg-slate-800 transition text-slate-300 hover:text-white hidden sm:block">개요</a>
+                <a href="#specs" class="px-3 py-1.5 rounded-md hover:bg-slate-800 transition text-slate-300 hover:text-white hidden sm:block">상품스펙</a>
+                <a href="#risk" class="px-3 py-1.5 rounded-md hover:bg-slate-800 transition text-slate-300 hover:text-white hidden sm:block">리스크관리</a>
+                <a href="#impact" class="px-3 py-1.5 rounded-md hover:bg-slate-800 transition text-slate-300 hover:text-white hidden sm:block">기대효과</a>
             </nav>
         </div>
     </header>
@@ -98,18 +100,75 @@ Confirmation: Neither Mermaid JS nor SVG were used in this file.
         <!-- Hero / Key Metrics Summary Section -->
         <section id="overview" class="bg-gradient-to-br from-slate-900 via-slate-800 to-sky-950 rounded-2xl p-6 sm:p-8 text-white shadow-xl relative overflow-hidden">
             <div class="relative z-10 space-y-6">
-                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-sky-500/20 text-sky-300 text-xs font-semibold border border-sky-400/30">
-                    <i class="fa-solid font-black fa-hand-holding-heart"></i>
-                    <span>2026 하반기 신상품 기획안</span>
-                </div>
-                <div class="max-w-3xl space-y-3">
-                    <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
-                        지역 소상공인의 포용적 금융 파트너<br>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-emerald-400">MG 상생 희망드림 대출</span>
-                    </h2>
-                    <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
-                        장기화된 내수 침체와 금리 부담 속에서 지역 실핏줄 경제를 지원합니다. 전통시장 상인 및 지역화폐 가맹 소상공인에게 최고 연 1.5%p의 파격적인 우대금리와 보증재단 연계 금융을 지원하는 상생 맞춤형 모델입니다.
-                    </p>
+                
+                <!-- Flex container for Text and Calculator -->
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+                    
+                    <!-- Left: Text Area -->
+                    <div class="max-w-3xl space-y-6">
+                        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-sky-500/20 text-sky-300 text-xs font-semibold border border-sky-400/30">
+                            <i class="fa-solid font-black fa-hand-holding-heart"></i>
+                            <span>2026 하반기 신상품 기획안</span>
+                        </div>
+                        <div class="space-y-3">
+                            <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+                                지역 소상공인의 포용적 금융 파트너<br>
+                                <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-emerald-400">MG 상생 희망드림 대출</span>
+                            </h2>
+                            <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                                장기화된 내수 침체와 금리 부담 속에서 지역 실핏줄 경제를 지원합니다. 전통시장 상인 및 지역화폐 가맹 소상공인에게 최고 연 1.5%p의 파격적인 우대금리와 보증재단 연계 금융을 지원하는 상생 맞춤형 모델입니다.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Right: Floating Calculator Widget -->
+                    <div class="flex-shrink-0 mt-6 md:mt-0 self-center md:self-start md:pr-4">
+                        <a href="https://kfcc023-del.github.io/MG0903/cal" target="_blank" class="group relative block transform hover:-translate-y-2 transition-all duration-300">
+                            <!-- Glow effect -->
+                            <div class="absolute -inset-1 bg-gradient-to-r from-rose-400 to-pink-500 rounded-3xl blur opacity-40 group-hover:opacity-70 transition duration-300"></div>
+                            
+                            <!-- Calculator Body -->
+                            <div class="relative bg-rose-100 border border-rose-200 rounded-2xl p-4 shadow-2xl w-44 rotate-3 group-hover:rotate-0 transition-transform duration-300 shadow-[8px_8px_0px_0px_rgba(225,29,72,0.4)]">
+                                
+                                <!-- Floating Badge -->
+                                <div class="absolute -top-3 -left-4 bg-rose-500 text-white text-xs px-3 py-1 rounded-full shadow-lg border border-rose-400 animate-bounce" style="font-family: 'Jua', sans-serif;">
+                                    Click!
+                                </div>
+
+                                <!-- Screen -->
+                                <div class="bg-slate-800 rounded-xl h-14 mb-4 shadow-inner flex flex-col justify-center items-end px-3 relative border-4 border-slate-700">
+                                    <span class="text-emerald-400 font-mono font-bold text-2xl tracking-tighter">MG♡</span>
+                                </div>
+                                
+                                <!-- Buttons Grid -->
+                                <div class="grid grid-cols-4 gap-2 mb-3">
+                                    <div class="bg-white rounded h-8 shadow-[0_2px_0_rgb(203,213,225)] flex justify-center items-center font-bold text-slate-400 text-sm group-hover:bg-rose-50 transition-colors">7</div>
+                                    <div class="bg-white rounded h-8 shadow-[0_2px_0_rgb(203,213,225)] flex justify-center items-center font-bold text-slate-400 text-sm group-hover:bg-rose-50 transition-colors">8</div>
+                                    <div class="bg-white rounded h-8 shadow-[0_2px_0_rgb(203,213,225)] flex justify-center items-center font-bold text-slate-400 text-sm group-hover:bg-rose-50 transition-colors">9</div>
+                                    <div class="bg-rose-400 rounded h-8 shadow-[0_2px_0_rgb(225,29,72,0.6)] flex justify-center items-center font-bold text-white text-sm">÷</div>
+                                    
+                                    <div class="bg-white rounded h-8 shadow-[0_2px_0_rgb(203,213,225)] flex justify-center items-center font-bold text-slate-400 text-sm group-hover:bg-rose-50 transition-colors">4</div>
+                                    <div class="bg-white rounded h-8 shadow-[0_2px_0_rgb(203,213,225)] flex justify-center items-center font-bold text-slate-400 text-sm group-hover:bg-rose-50 transition-colors">5</div>
+                                    <div class="bg-white rounded h-8 shadow-[0_2px_0_rgb(203,213,225)] flex justify-center items-center font-bold text-slate-400 text-sm group-hover:bg-rose-50 transition-colors">6</div>
+                                    <div class="bg-rose-400 rounded h-8 shadow-[0_2px_0_rgb(225,29,72,0.6)] flex justify-center items-center font-bold text-white text-sm">×</div>
+                                    
+                                    <div class="bg-white rounded h-8 shadow-[0_2px_0_rgb(203,213,225)] flex justify-center items-center font-bold text-slate-400 text-sm group-hover:bg-rose-50 transition-colors">1</div>
+                                    <div class="bg-white rounded h-8 shadow-[0_2px_0_rgb(203,213,225)] flex justify-center items-center font-bold text-slate-400 text-sm group-hover:bg-rose-50 transition-colors">2</div>
+                                    <div class="bg-white rounded h-8 shadow-[0_2px_0_rgb(203,213,225)] flex justify-center items-center font-bold text-slate-400 text-sm group-hover:bg-rose-50 transition-colors">3</div>
+                                    <div class="bg-rose-400 rounded h-8 shadow-[0_2px_0_rgb(225,29,72,0.6)] flex justify-center items-center font-bold text-white text-sm">-</div>
+                                    
+                                    <div class="bg-white rounded h-8 shadow-[0_2px_0_rgb(203,213,225)] flex justify-center items-center font-bold text-slate-400 text-sm group-hover:bg-rose-50 transition-colors">C</div>
+                                    <div class="bg-white rounded h-8 shadow-[0_2px_0_rgb(203,213,225)] flex justify-center items-center font-bold text-slate-400 text-sm group-hover:bg-rose-50 transition-colors">0</div>
+                                    <div class="bg-rose-500 rounded h-8 shadow-[0_2px_0_rgb(159,18,57,0.8)] col-span-2 flex justify-center items-center font-bold text-white text-sm">=</div>
+                                </div>
+
+                                <!-- Text Label -->
+                                <div class="bg-rose-500 text-white text-center py-1.5 rounded-lg font-bold tracking-wider text-[15px] shadow-inner border border-rose-600" style="font-family: 'Jua', sans-serif;">
+                                    금융계산기
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
 
                 <!-- KPI Metric Highlights -->
